@@ -24,7 +24,10 @@ function showTab(tabId) {
         activeButton.classList.add('active');
     }
 }
-
+function toggleMenu() {
+    const menu = document.querySelector('.tabs');
+    menu.classList.toggle('active');
+}
 // Initially show the "home" tab
 document.addEventListener('DOMContentLoaded', function() {
     showTab('home');
