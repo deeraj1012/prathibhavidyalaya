@@ -35,17 +35,26 @@ header {
     height: 80px; /* Adjust logo height */
 }
 
+/* Navigation styles */
 nav ul {
     list-style-type: none;
     padding: 0;
     text-align: right;
+    display: flex;
 }
 
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
-
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 .tab-button {
     background-color: #1a4d29; /* Dark green for navbar (tab background) */
     color: white;
@@ -219,42 +228,65 @@ footer p {
 }
 
 /* Media Queries for Responsive Design */
+
+/* For tablets and smaller screens */
 @media (max-width: 1024px) {
     /* For tablets and smaller screens */
     .home-highlights {
         flex-direction: column;
         align-items: center;
     }
-
+    .hamburger {
+        display: none; /* Make the hamburger visible */
+    }
     .highlight-card {
         width: 80%;
         margin: 10px 0;
     }
 }
 
+/* For mobile devices */
 @media (max-width: 768px) {
     /* For mobile devices */
-    .home-highlights {
-        flex-direction: column;
-        align-items: center;
+    nav ul {
+        display: none; /* Hide the navigation menu by default */
+        flex-direction: column; /* Stack the navigation items vertically */
+        align-items: center; /* Center the items */
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
-    .highlight-card {
-        width: 90%;
+    nav ul li {
+        margin: 10px 0; /* Add vertical spacing between the buttons */
+        width: 100%; /* Make each button take full width */
     }
 
-    .cta .btn {
-        padding: 12px 25px;
+    .tab-button {
+        padding: 12px 0;  /* Adjust padding for better alignment */
+        font-size: 18px;  /* Increase font size for readability */
+    }
+
+    /* Show hamburger menu only on mobile */
+    .hamburger {
+        display: block; /* Make the hamburger visible */
+    }
+
+    .tabs.active {
+        display: flex; /* Show the menu when active */
     }
 }
 
+/* For very small screens like phones in portrait mode */
 @media (max-width: 480px) {
     /* For very small screens like phones in portrait mode */
     .highlight-card {
         width: 100%;
         margin-bottom: 15px;
     }
-
+    .hamburger {
+        display: block; /* Make the hamburger visible */
+    }
     .cta .btn {
         padding: 10px 20px;
         font-size: 14px;
