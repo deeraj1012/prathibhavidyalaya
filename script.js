@@ -23,6 +23,8 @@ function showTab(tabId) {
     if (activeButton) {
         activeButton.classList.add('active');
     }
+    const menu = document.querySelector('.tabs');
+    menu.classList.remove('active'); 
 }
 function toggleMenu() {
     const menu = document.querySelector('.tabs');
